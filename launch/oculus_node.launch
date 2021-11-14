@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+ <arg name="ipAddr" default="auto" />
+ <arg name="stopAfter" default="5" />
+ <arg name="inputFile" default="" />
+ <arg name="outputFile" default="oculus_received_data" />
+
+  <!-- oculus wrapper node  -->
+  <node name="oculus_node" pkg="oculus_ros"  type="oculus_node" output="screen" >
+    <param name="inputFile" value="$(arg inputFile)" />
+    <param name="outputFile" value="$(arg outputFile)" />
+    <param name="stopAfter" value="$(arg stopAfter)" />
+    <param name="ipAddr" value="$(arg ipAddr)" />
+  </node>
+
+
+
+</launch>
